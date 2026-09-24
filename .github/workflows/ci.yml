@@ -1,4 +1,4 @@
-name: Tests and smoke demo
+name: Notebook checks
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -11,17 +11,6 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-      - run: pip install -e '.[dev]'
+      - run: pip install -r requirements.txt 'pytest>=8,<10' 'ruff>=0.9,<1'
       - run: ruff check .
       - run: pytest -q
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: node --test tests/test_demo.mjs
-      - run: causal-hedging demo --steps 64 --seeds 42 --test-paths 1
-      - uses: actions/upload-artifact@v4
-        with:
-          name: smoke-demo-not-benchmark
-          path: |
-            docs/
-            results/

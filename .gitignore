@@ -3,10 +3,6 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .venv/
-*.egg-info/
-build/
-dist/
 .DS_Store
-
 .ipynb_checkpoints/
 notebook-runs/
