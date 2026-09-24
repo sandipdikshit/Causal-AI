@@ -7,3 +7,6 @@ __pycache__/
 build/
 dist/
 .DS_Store
+
+.ipynb_checkpoints/
+notebook-runs/

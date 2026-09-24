@@ -8,6 +8,19 @@ A Transformer-PPO policy observes a recurring Q4 price discount. Part of that pa
 
 > **Scope:** reproducible synthetic procurement experiment with a known SCM. Real WTI prices are included as market context, not as evidence that a company caused seasonality. Causal effects are assumed in the simulator, not discovered from the public data.
 
+## Start with the notebook
+
+**[Read the complete experiment in one Jupyter notebook](Causal_AI_Experiment.ipynb)** — explanations, full model code, executed training, data tables and inline figures, in one place. All outputs are saved, so GitHub can render the findings without running code. The notebook does not import the local package; its model definitions are synchronized with the tested implementation.
+
+```bash
+pip install -e '.[notebook]'
+jupyter lab Causal_AI_Experiment.ipynb
+```
+
+Choose **Restart Kernel → Run All** to reproduce all six training runs. Generated results go into `notebook-runs/`, separate from the committed reference results. WTI data stays in `data/`; a standalone notebook can download it from FRED. [Download the notebook](https://github.com/sandipdikshit/Causal-AI/raw/refs/heads/main/Causal_AI_Experiment.ipynb).
+
+The notebook is the guided reading and presentation format; the package and tests support reuse and maintenance. Neither structure needs to replace the other.
+
 ## Run it
 
 Python 3.11+; CPU is sufficient. From the repository root:
@@ -106,6 +119,8 @@ No private company liquidation records are available, so these observations do n
 ## Repository map
 
 ```text
+Causal_AI_Experiment.ipynb  Full executed experiment in one notebook
+scripts/build_notebook.py  Synchronizes inline implementation with package source
 src/causal_hedging/  SCM, PPO, paired evaluation, data access, visuals, CLI
 tests/              interventions, no leakage, PPO shapes, GAE, parsing, smoke training
 docs/index.html     offline demo with interactive intervention slider
