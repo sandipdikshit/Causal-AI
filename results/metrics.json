@@ -1,0 +1,34 @@
+{
+  "config": {
+    "years": 10,
+    "history": 104,
+    "entry_year": 8,
+    "horizon": 4,
+    "liquidation_effect": 8.0,
+    "shock_size": 12.0,
+    "hedge_fee": 0.15,
+    "risk_aversion": 0.04
+  },
+  "training_seeds": [
+    11,
+    22,
+    33
+  ],
+  "steps_per_policy": 4096,
+  "test_paths_per_seed": 8,
+  "evaluation_decisions_per_path": 100,
+  "paired_cost_reduction_mean": 1.6014548326071372,
+  "paired_cost_reduction_by_seed": {
+    "11": 1.83832183085154,
+    "22": 2.281158390926903,
+    "33": 0.6848842760429683
+  },
+  "positive_reduction_means": "Interventional policy had lower procurement cost",
+  "underhedging_definition": "Probability of categorical hedge below 0.5; not mean hedge",
+  "evaluation_action": "Probability-weighted mean hedge; training samples categorical actions",
+  "market_data_used_for_training": false,
+  "python": "3.12.14",
+  "torch": "2.14.0",
+  "numpy": "2.5.3",
+  "interpretation": "Known synthetic SCM stress experiment, not empirical causal identification"
+}

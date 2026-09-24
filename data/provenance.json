@@ -1,0 +1,14 @@
+{
+  "series": "DCOILWTICO",
+  "source": "https://fred.stlouisfed.org/series/DCOILWTICO",
+  "download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO",
+  "provider": "U.S. Energy Information Administration via FRED",
+  "units": "USD per barrel",
+  "frequency": "daily published observations; not intraday",
+  "retrieved_at_utc": "2026-09-24T08:16:18.905819+00:00",
+  "first_observation": "2016-09-22",
+  "last_observation": "2026-09-22",
+  "observations": 2500,
+  "sha256": "0b1c41eb65f3a866830413b18d127d91456fa4d102d068fc4374e3dff7dfaaf9",
+  "role": "Market context only; not used to estimate liquidation effects or train PPO"
+}

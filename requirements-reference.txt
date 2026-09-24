@@ -1,0 +1,5 @@
+# Versions used for the committed reference experiment (Python 3.12.14, macOS arm64 CPU).
+numpy==2.5.3
+pandas==2.2.3
+torch==2.14.0
+matplotlib==3.11.2
