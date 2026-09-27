@@ -12,7 +12,7 @@ import pytest
 import torch
 
 ROOT = Path(__file__).resolve().parents[1]
-NOTEBOOK = json.loads((ROOT / "Causal_AI_Experiment.ipynb").read_text())
+NOTEBOOK = json.loads((ROOT / "RL_Experiment.ipynb").read_text())
 
 
 def load_definitions():
@@ -141,3 +141,22 @@ def test_market_snapshot_matches_provenance():
         hashlib.sha256((ROOT / "data/wti_daily.csv").read_bytes()).hexdigest()
         == provenance["sha256"]
     )
+
+
+def test_pricing_notebook_executes_and_keeps_claims_labeled():
+    pricing = json.loads((ROOT / "RLHF_Pricing_Causal_Preference_Firewall.ipynb").read_text())
+    code = [c for c in pricing["cells"] if c["cell_type"] == "code"]
+    assert [c["execution_count"] for c in code] == list(range(1, len(code) + 1))
+    assert not any(o["output_type"] == "error" for c in code for o in c["outputs"])
+    assert sum("image/png" in o.get("data", {}) for c in code for o in c["outputs"]) == 3
+    narrative = "\n".join(
+        "".join(c["source"]) for c in pricing["cells"] if c["cell_type"] == "markdown"
+    )
+    assert "fully synthetic" in narrative.lower()
+    assert "does **not** fine-tune a real LLM" in narrative
+    assert "not a verification" in narrative.lower() or "does **not**" in narrative.lower()
+    streams = "\n".join(
+        str(o.get("text", "")) for c in code for o in c["outputs"] if o["output_type"] == "stream"
+    )
+    for marker in ["Simulator truth", "Randomized ATE", "IV first stage", "Local RD"]:
+        assert marker in streams
