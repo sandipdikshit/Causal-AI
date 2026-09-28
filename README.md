@@ -1,10 +1,11 @@
 # Causal AI · Executed experiments
 
-Three executed notebooks present the experiments in one place each:
+Four executed notebooks present the experiments in one place each:
 
 - **[Commodity hedging and liquidation interventions](RL_Experiment.ipynb):** Transformer-PPO in a known structural model, with paired counterfactual paths.
 - **[RLHF pricing and a causal preference firewall](RLHF_Pricing_Causal_Preference_Firewall.ipynb):** a synthetic reward model trained on biased pairwise advice preferences, checked against randomized pricing, an encouragement instrument and a threshold design.
 - **[Propensity versus causal uplift](Propensity_vs_Causal_Uplift.ipynb):** a real randomized email-campaign dataset, fixed-budget targeting policies, held-out incremental conversions, bootstrap uncertainty, and explicit cost scenarios.
+- **[Attention after the fact](attention_after_the_fact.ipynb):** a public-retail-calibrated transformer post-mortem showing how standard attention routes through a downstream mediator, and how a causal feature mask changes the learned representation and counterfactual effect estimate.
 
 All three contain code, explanations, tables and inline figures. Saved outputs render on GitHub.
 
