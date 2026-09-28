@@ -7,7 +7,7 @@ Four executed notebooks present the experiments in one place each:
 - **[Propensity versus causal uplift](Propensity_vs_Causal_Uplift.ipynb):** a real randomized email-campaign dataset, fixed-budget targeting policies, held-out incremental conversions, bootstrap uncertainty, and explicit cost scenarios.
 - **[Attention after the fact](attention_after_the_fact.ipynb):** a public-retail-calibrated transformer post-mortem showing how standard attention routes through a downstream mediator, and how a causal feature mask changes the learned representation and counterfactual effect estimate.
 
-All three contain code, explanations, tables and inline figures. Saved outputs render on GitHub.
+All four contain code, explanations, tables and inline figures. Saved outputs render on GitHub.
 
 The commodity notebook brings together its structural model, training, results and five inline charts. The pricing notebook independently demonstrates how preference accuracy can disagree with contribution margin.
 
