@@ -1,9 +1,0 @@
-[tool.ruff]
-line-length = 100
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-
-[tool.ruff.lint.per-file-ignores]
-# Tests intentionally execute checked-in notebook definitions as their test subject.
-"tests/test_core.py" = ["S102"]
