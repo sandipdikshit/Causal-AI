@@ -2,6 +2,8 @@
 
 ShieldOS is a functional front-end prototype for transaction monitoring, explainable risk scoring, automated settlement routing, and fraud-operations traceability.
 
+**[Open the interactive prototype](https://raw.githack.com/sandipdikshit/Causal-AI/main/ShieldOS/demo/index.html)**
+
 ## Workflow
 
 1. Simulate an incoming transaction using amount, account velocity, device trust, and SIM-swap signals.
