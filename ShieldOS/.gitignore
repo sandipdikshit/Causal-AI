@@ -16,6 +16,10 @@
 # next.js
 /.next/
 /out/
+/.vinext/
+/dist/
+/.wrangler/
+/.sites-runtime/
 
 # misc
 .DS_Store
